@@ -3,28 +3,27 @@
 ## Installation
 
 ### Create a virtual environment with conda
-
-'''
+``
 conda create -n answerverbalization python=3.6
-'''
+``
 
 ### Activate Environment
 
-'''
+``
 conda activate answerverbalization
-'''
+``
 
 ### Install packages in the requirements.txt file using pip
 
-'''
+``
 pip install -r requirements.txt
-'''
+``
 
 ## Training + Testing
 To train a T5 model to on ParaQA with the whole training data (--training\_ratio set to 100) for the Answer Verbalization task (--tasks set to 'AV'), you can execute the command below.
-'''
-CUDA\_VISIBLE\_DEVICES=0 python train.py --seed "42" --exp\_name run"42" --training\_datasets ParaQA --training\_ratio "100" --lr "0.0001" --tasks "AV" --model "T5ForConditionalGeneration" --tokenizer "T5Tokenizer" --config "t5-base" --cache\_dir "data/" --lowercase --use\_cuda
-'''
+``
+CUDA_VISIBLE_DEVICES=0 python train.py --seed "42" --exp_name run"42" --training_datasets ParaQA --training_ratio "100" --lr "0.0001" --tasks "AV" --model "T5ForConditionalGeneration" --tokenizer "T5Tokenizer" --config "t5-base" --cache_dir "data/" --lowercase --use_cuda
+``
 
 ## Task Definition
 The task of **A**nswer **V**erbalization consists in generating a natural language response given the previous question and the raw answer. Given a question, we aim at generating a masked verbalization. 
@@ -52,5 +51,5 @@ First value and second value stand for the BLEU score (Papineni et al) and METEO
 | Transformer (Q) | 18.37<br>56.83 | 23.61<br>59.63 | 30.80<br>62.16 |
 | (***SOTA***) VOGUE (H) | 28.76<br>67.21 | 32.05<br>68.85 | 35.46<br>65.04 |
 | Akermi et al. | 22.70<br>48.04 | 18.25<br>44.27 | 18.30<br>48.27 |
-| T5 (masking) | 39.07<br>67.70 | 30.62<br>59.81 | <ins>45.87</ins><br><ins>67.15</ins> |
-| BART (masking) | <ins>43.90</ins><br><ins>71.92</ins> | <ins>35.57</ins><br><ins>65.40</ins> | **45.69**<br> **66.71** |
+| T5 (masking) | 39.07<br>67.70 | 30.62<br>59.81 | 45.87<br>67.15 |
+| BART (masking) | 43.90><br>71.92 | 35.57<br>65.40 | 45.69<br> 66.71 |
