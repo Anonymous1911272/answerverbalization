@@ -1,7 +1,7 @@
 #!/usr/bin/env/ bash
 
-declare -a datasets=("VANiLLa" "VQuAnDa" "ParaQA" "VANiLLa VQuAnDa" "VANiLLa ParaQA" "VQuAnDa ParaQA" "VANiLLa VQuAnDa ParaQA")
-declare -a tasks=("AV" "AV RQ")
+declare -a datasets=("VANiLLa" "VQuAnDa" "ParaQA")
+declare -a tasks=("AV")
 
 
 
