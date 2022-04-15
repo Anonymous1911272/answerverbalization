@@ -20,7 +20,8 @@ pip install -r requirements.txt
 ``
 
 ## Training + Testing
-To train a T5 model to on ParaQA with the whole training data (--training\_ratio set to 100) for the Answer Verbalization task (--tasks set to 'AV'), you can execute the command below.
+To train a T5 model on ParaQA with the whole training data (--training\_ratio set to 100) for the Answer Verbalization task (--tasks set to 'AV'), you can execute the command below.
+
 ``
 CUDA_VISIBLE_DEVICES=0 python train.py --seed "42" --exp_name run"42" --training_datasets ParaQA --training_ratio "100" --lr "0.0001" --tasks "AV" --model "T5ForConditionalGeneration" --tokenizer "T5Tokenizer" --config "t5-base" --cache_dir "data/" --lowercase --use_cuda
 ``
